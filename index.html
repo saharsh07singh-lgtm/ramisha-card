@@ -10,51 +10,37 @@
         margin: 0;
         font-family: "Arial", sans-serif;
         background-color: #ffe6ee;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
         overflow: hidden;
+        text-align: center;
     }
 
-    /* First screen */
     #startScreen {
+        height: 100vh;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
+        background: #ffe6ee;
     }
 
     .start-btn {
-        padding: 15px 40px;
+        padding: 15px 35px;
         background-color: #ff4f8b;
         color: white;
         font-size: 22px;
-        border-radius: 30px;
+        border-radius: 35px;
         border: none;
         cursor: pointer;
-        transition: 0.3s;
-        box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
-    }
-    .start-btn:hover {
-        transform: scale(1.1);
-    }
-
-    /* Slides */
-    #slidesContainer {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100%;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
     }
 
     .slide {
-        display: flex;
+        display: none;
+        height: 100vh;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        animation: fade 1s ease-in-out;
+        animation: fade 1.5s ease-in-out;
     }
 
     @keyframes fade {
@@ -66,55 +52,96 @@
         width: 330px;
         height: 330px;
         object-fit: cover;
-        border-radius: 22px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        border-radius: 20px;
         margin-bottom: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     h2 {
         font-size: 26px;
-        color: #ff2e75;
-        width: 90%;
+        color: #ff4f8b;
+        width: 80%;
+    }
+
+    /* Final message box */
+    #finalMessage {
+        display: none;
+        height: 100vh;
+        padding: 20px;
+        font-size: 22px;
+        line-height: 1.7;
+        color: #ff4f8b;
+        background: #fff2f6;
+        overflow-y: auto;
+        animation: slowFade 4s ease-in-out;
+        white-space: pre-line;
+    }
+
+    @keyframes slowFade {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
     }
 </style>
 </head>
 
 <body>
 
+<!-- FIRST SCREEN -->
 <div id="startScreen">
+    <h1 style="color:#ff4f8b; font-size: 40px;">Happy Birthday Ramisha 🎂✨</h1>
     <button class="start-btn" onclick="startCard()">Start ✨</button>
 </div>
 
+<!-- SLIDES -->
 <div id="slidesContainer"></div>
+
+<!-- FINAL MESSAGE -->
+<div id="finalMessage">
+I admire you so much itna ki khud ko pata ni tum humare dil aur dimag dono se jud chuki ho.
+Tumhara do pal ka baat karna saalon k barabar hota hai (iska mtlb ye ni ki bas 2 pal hi baat kro) just kidding.
+Tumhare hisab se hum kabhi sath ni hosakte , no problem  life me har cheez mile aisa zaruri to ni . Glti humari hai jab thi tab kdr ni ki jitni krni thi bday tak bhul gye yrr sabse bdi glti life thi wo. Sorry yrr tumhe humesha pareshan hi kiya hai pehle bhi aur ab bhi kar rahe mna krti ho msg kr dete hain sorry .
+Khar chodo ye sab baateintum bas khush raho aur kuch bhi ni chahiye 
+You deserve everything best in your life ,and i am the worst anyone can have. 
+Tum jo chaho tumhein wo mile humesha khush raho jiske saath bhi raho.
+Agr bhagwan wagaira hote hain to humari umar ,khushiyan , tarraki sab tumhe mil jaye 
+Aur tumhari har dikkat hume 
+ksm se cheap ni ho rahe dil se bol rahe .
+At last 
+Happiest Birthday enjoy your day
+
+                
+Ummed hai tumhe humari choti si koshish psnd ayi ho 
+Utna best ni bn paya sorry
+</div>
 
 <audio id="bgMusic" src="music.mp3"></audio>
 
 <script>
 const slidesData = [
-    { img: "pic1.jpg", text: "The day I saw you, something changed inside me 💗" },
-    { img: "pic2.jpg", text: "You are not aware… how beautiful your smile is ✨" },
-    { img: "pic3.jpg", text: "Even your smallest presence can make days brighter 🌸" },
-    { img: "cat1.jpg", text: "If I were a cat, I’d choose to sit near you always 🐾" },
-    { img: "cat2.jpg", text: "Cats choose their humans… and I choose you 💞" },
-    { img: "cat3.jpg", text: "You deserve happiness, love, peace. Always. 🌷" },
-    { img: "pic1.jpg", text: "I know I can’t be part of your life… but you’ll always have a place in my heart ❤️" },
-    { img: "pic2.jpg", text: "Happy Birthday, Ramisha ✨" }
+    { img: "cat1.jpg", text: "For the cutest ailurophile in the world 🌎❤️" },
+    { img: "cat2.jpg", text: "Your smile > everything ✨" },
+    { img: "cat3.jpg", text: "Cats choose their humans… and I choose you 🐾" },
+
+    { img: "pic1.jpg", text: "That smile lights up everything 🌸" },
+    { img: "pic2.jpg", text: "The world looks softer when you’re in it 💫" },
+    { img: "pic3.jpg", text: "No one is better than you — be happy always 💖" }
 ];
 
 let currentSlide = 0;
 
 function startCard() {
     document.getElementById("startScreen").style.display = "none";
-    document.getElementById("slidesContainer").style.display = "flex";
-
-    const music = document.getElementById("bgMusic");
-    music.volume = 0.5;
-    music.play();
-
+    document.getElementById("bgMusic").play();
     showSlides();
 }
 
 function showSlides() {
+    if (currentSlide >= slidesData.length) {
+        document.getElementById("slidesContainer").style.display = "none";
+        document.getElementById("finalMessage").style.display = "block";
+        return;
+    }
+
     const container = document.getElementById("slidesContainer");
     container.innerHTML = "";
 
@@ -127,11 +154,10 @@ function showSlides() {
     `;
 
     container.appendChild(slide);
+    slide.style.display = "flex";
 
     currentSlide++;
-    if (currentSlide < slidesData.length) {
-        setTimeout(showSlides, 3500);
-    }
+    setTimeout(showSlides, 3500);
 }
 </script>
 
