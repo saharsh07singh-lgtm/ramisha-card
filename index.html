@@ -1,134 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Happy Birthday Ramisha 🎂</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ramisha 🎂✨</title>
 
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: #ffe6ec;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-  }
-  .active { opacity: 1; }
-  img {
-    width: 60%;
-    height: auto;
-    border-radius: 20px;
-    margin-top: 80px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.2);
-  }
-  h2, p {
-    color: #333;
-    margin-top: 20px;
-  }
-  .final-message {
-    background: #fff0f5;
-    height: 100%;
-    overflow-y: scroll;
-    padding: 50px;
-    text-align: left;
-    font-size: 1.15em;
-    line-height: 1.9em;
-  }
-  #startBtn {
-    background-color: #ff80ab;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 25px;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    transition: 0.3s;
-  }
-  #startBtn:hover { background-color: #ff4d88; }
+    body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #ffe6ee;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    #startScreen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .start-btn {
+        padding: 15px 35px;
+        background-color: #ff4f8b;
+        color: white;
+        font-size: 20px;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .slide {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        animation: fade 1s ease-in-out;
+    }
+
+    @keyframes fade {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    img {
+        width: 330px;
+        height: 330px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+        font-size: 26px;
+        color: #ff4f8b;
+        width: 80%;
+    }
 </style>
 </head>
+
 <body>
 
-<button id="startBtn">Start ✨</button>
-
-<!-- ✅ AUDIO FILE NAME FIXED -->
-<audio id="bgMusic" src="music.mp3" loop></audio>
-
-<div class="slide" id="slide1">
-  <img src="pic1.jpg" alt="Ramisha 1">
-  <h2>That smile lights up everything 🌸</h2>
-  <p>The world looks softer when you're in it 💫</p>
-  <p>No one is better than you — be happy always 💖</p>
+<div id="startScreen">
+    <button class="start-btn" onclick="startCard()">Start ✨</button>
 </div>
 
-<div class="slide" id="slide2">
-  <img src="cat1.jpg" alt="Cat 1">
-  <img src="cat2.jpg" alt="Cat 2">
-  <img src="cat3.jpg" alt="Cat 3">
-  <h2>For the cutest Ailurophile 🐾❤️‍🩹 in the world</h2>
-</div>
+<div id="slidesContainer"></div>
 
-<div class="slide" id="slide3">
-  <img src="pic2.jpg" alt="Ramisha 2">
-</div>
-
-<div class="slide" id="slide4">
-  <img src="pic3.jpg" alt="Ramisha 3">
-</div>
-
-<div class="slide final-message" id="slide5">
-  <h2>💌 Happy Birthday to the most beautiful person I’ve ever met 💌</h2>
-  <p>
-    I admire you so much — itna ki khud ko pata nahi tum humare dil aur dimag dono se jud chuki ho.<br><br>
-    Tumhara do pal ka baat karna saalon k barabar hota hai (iska mtlb ye nahi ki bas 2 pal hi baat kro 😅).<br>
-    Tumhare hisaab se hum kabhi saath nahi ho sakte, no problem — life me har cheez milti hai aisa zaruri nahi.<br><br>
-    Glti humari thi... jab thi tab kadar nahi ki jitni karni thi, bday tak bhul gye yrr — sabse bdi glti life ki thi wo 💔.<br>
-    Sorry yrr, tumhe humesha pareshaan hi kiya hai — pehle bhi aur ab bhi kar rahe hain, mana karti ho, msg kar dete hain 😔.<br><br>
-    Khair chhodo ye sab baatein... tum bas khush raho, aur kuch nahi chahiye 💫.<br>
-    You deserve everything best in your life, and I am the worst anyone can have.<br><br>
-    Tum jo chaho tumhe wo mile, humesha khush raho — jiske saath bhi raho 💐.<br>
-    Agar bhagwan waqai hote hain, to humari umar, khushiyan, taraqqi sab tumhe mil jaayein,<br>
-    aur tumhari har dikkat hume mil jaaye 💗.<br><br>
-    Kasam se cheap nahi ho rahe, dil se bol rahe 😭.<br><br>
-    At last — Happiest Birthday! Enjoy your day 🎂✨<br><br>
-    Umeed hai tumhe humari chhoti si koshish pasand aayi ho 💞<br>
-    Utna best nahi bana paya — sorry 🙏
-  </p>
-</div>
+<audio id="bgMusic" src="music.mp3"></audio>
 
 <script>
-const startBtn = document.getElementById("startBtn");
-const slides = document.querySelectorAll(".slide");
-const music = document.getElementById("bgMusic");
-let current = 0;
+const slidesData = [
+    { img: "pic1.jpg", text: "The day I saw you, something changed inside me 💗" },
+    { img: "pic2.jpg", text: "You are not aware… how beautiful your smile is ✨" },
+    { img: "pic3.jpg", text: "Even your smallest presence can make days brighter 🌸" },
+    { img: "cat1.jpg", text: "If I were a cat, I’d choose to sit near you always 🐾" },
+    { img: "cat2.jpg", text: "Cats choose their humans… and I choose you 💞" },
+    { img: "cat3.jpg", text: "You deserve happiness, love, peace. Always. 🌷" },
+    { img: "pic1.jpg", text: "I know I can’t be part of your life… but you’ll always have a place in my heart ❤️" },
+    { img: "pic2.jpg", text: "Happy Birthday, Ramisha ✨" }
+];
 
-startBtn.addEventListener("click", () => {
-  startBtn.style.display = "none";
-  music.play().catch(() => console.log("Music blocked by browser"));
-  showSlide();
-});
+let currentSlide = 0;
 
-function showSlide() {
-  slides.forEach(s => s.classList.remove("active"));
-  slides[current].classList.add("active");
-  if (current < slides.length - 1) {
-    setTimeout(() => {
-      current++;
-      showSlide();
-    }, 4000);
-  }
+function startCard() {
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("bgMusic").play();
+    showSlides();
+}
+
+function showSlides() {
+    const container = document.getElementById("slidesContainer");
+    container.innerHTML = "";
+
+    const slide = document.createElement("div");
+    slide.className = "slide";
+
+    slide.innerHTML = `
+        <img src="${slidesData[currentSlide].img}">
+        <h2>${slidesData[currentSlide].text}</h2>
+    `;
+
+    container.appendChild(slide);
+    slide.style.display = "flex";
+
+    currentSlide++;
+
+    if (currentSlide < slidesData.length) {
+        setTimeout(showSlides, 3500);
+    }
 }
 </script>
 
